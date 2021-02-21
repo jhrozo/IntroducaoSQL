@@ -1,6 +1,6 @@
 # IntroducaoSQL
 Curso de introdução ao SQL usando MS SQL Server.
 
-Os scripts para criar o banco de dados bd_01 e popular as tabelas usadas nos exemplos estão disponíveis.
+Use os scripts criarEsquema.sql e popularTabelas.sql para criar o esquema de dados do Sistema de Pedidos usado nos exemplos.
 
 Jaime H Rozo
