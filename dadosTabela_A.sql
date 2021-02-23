@@ -1,5 +1,9 @@
 -- dados_Tabela_A
-use bd_01;
+use bd_01
+go
+
+create table tabela_A (numero smallint NULL) ON [PRIMARY]
+go
 
 insert into tabela_A values(1);
 insert into tabela_A values(2);
