@@ -11,3 +11,9 @@ EXERCÍCIOS
 4) Listar todas as combinações entre os 5 primeiros números.
 
 5) Listar todas as combinações entre os 5 primeiros números, excluir as combinações repetidas.	
+
+6) Listar os detalhes do último pedido do cliente Christina Berglund.
+
+7) Total de todas as compras realizas pelo cliente Christina Berglund.
+
+8) Listar total de compras por ano de cada cliente.
