@@ -1,7 +1,7 @@
--- respostasExercicios.sql
+-- respostasExercicios.sql  v1.0  2021
 -- Jaime H Rozo - jhrozo@yahoo.com
 
--- 1. Listar as cidades dos clientes que nao iniciam e não terminam com vogal
+-- 1. Listar as cidades dos clientes que nao iniciam e nÃ£o terminam com vogal
 SELECT Cidade
   FROM Cliente
  WHERE SUBSTRING(Cidade, 1, 1) NOT IN ('A','E','I','O','U','a','e','i','o','u')
@@ -21,20 +21,20 @@ SELECT Cidade
  ORDER BY Cidade;
 
 -- 2 Listar os 5 primeiros clientes com mais pedidos.
-SELECT TOP(5) c.Id, c.Nome+' '+c.Sobrenome, COUNT(*) Núm_Pedidos
+SELECT TOP(5) c.Id, c.Nome+' '+c.Sobrenome, COUNT(*) NÃºm_Pedidos
   FROM Cliente c, Pedido p
  WHERE c.Id = p.ClienteId
  GROUP BY c.Id, c.Nome+' '+c.Sobrenome
- ORDER BY Núm_Pedidos DESC;
+ ORDER BY NÃºm_Pedidos DESC;
 
-SELECT TOP(5) c.Id, c.Nome+' '+c.Sobrenome, COUNT(*) Núm_Pedidos
+SELECT TOP(5) c.Id, c.Nome+' '+c.Sobrenome, COUNT(*) NÃºm_Pedidos
   FROM Cliente c INNER JOIN Pedido p ON c.Id = p.ClienteId
  GROUP BY c.Id, c.Nome+' '+c.Sobrenome
- ORDER BY Núm_Pedidos DESC;
+ ORDER BY NÃºm_Pedidos DESC;
 
 --3 Listar todos os atributos dos produtos que nunca foram pedidos, incluir o nome do fornecedor.
 SELECT p.Id, p.Nome, p.Preco, p.Apresentacao,
-       CHOOSE(p.Descontinuado+1,'ATIVO','DESCONTINUADO') AS Situação, 
+       CHOOSE(p.Descontinuado+1,'ATIVO','DESCONTINUADO') AS SituaÃ§Ã£o, 
 	   f.Empresa
   FROM Produto p 
        INNER JOIN
@@ -46,21 +46,21 @@ SELECT p.Id, p.Nome, p.Preco, p.Apresentacao,
 	   Fornecedor f ON p.FornecedorId = f.Id
 
 SELECT p.Id, p.Nome, p.Preco, p.Apresentacao,
-       CHOOSE(p.Descontinuado+1,'ATIVO','DESCONTINUADO') AS Situação, f.Empresa
+       CHOOSE(p.Descontinuado+1,'ATIVO','DESCONTINUADO') AS SituaÃ§Ã£o, f.Empresa
   FROM Produto p,
        Fornecedor f
  WHERE p.Id NOT IN (SELECT ProdutoId FROM ItemPedido)
    AND p.FornecedorId = f.Id
 
---4 Listar todas as combinações entre os números de 1 a 5.
+--4 Listar todas as combinaÃ§Ãµes entre os nÃºmeros de 1 a 5.
 SELECT * 
   FROM tabela_A CROSS JOIN tabela_B
 
---5 Listar todas as combinações entre os números de 1 a 5, excluir as combinações repetidas.
+--5 Listar todas as combinaÃ§Ãµes entre os nÃºmeros de 1 a 5, excluir as combinaÃ§Ãµes repetidas.
 SELECT a.numero, b.numero
   FROM tabela_A As a JOIN tabela_B AS b ON a.numero < b.numero
 
---6 Listar os detalhes do último pedido do cliente Christina Berglund.
+--6 Listar os detalhes do Ãºltimo pedido do cliente Christina Berglund.
 SELECT c.Nome+' '+c.Sobrenome AS Nome, 
        ProdutoId, PrecoUnit, Quantidade, PrecoUnit * Quantidade AS Total
   FROM ItemPedido i,
@@ -74,10 +74,10 @@ SELECT c.Nome+' '+c.Sobrenome AS Nome,
 
 --7 Listar quantos de pedidos e a soma de todos por cliente. Identificar cada cliente.
 SELECT c.Id, c.Nome+' '+c.Sobrenome, 
-       SUM(p.ValorTotal) AS 'Valor Total', COUNT(p.NumeroPedido) AS 'Número Pedidos'
+       SUM(p.ValorTotal) AS 'Valor Total', COUNT(p.NumeroPedido) AS 'NÃºmero Pedidos'
   FROM Pedido p INNER JOIN Cliente c ON p.ClienteId = c.Id
  GROUP BY c.Id, c.Nome+' '+c.Sobrenome
- ORDER BY 'Número Pedidos' DESC
+ ORDER BY 'NÃºmero Pedidos' DESC
 
 --8 Listar total de compras por ano de cada cliente.
 SELECT ClienteId, [2014], [2013], [2012]
