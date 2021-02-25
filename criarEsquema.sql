@@ -1,13 +1,18 @@
--- criarEsquema.sql
+-- criarEsquema.sql  v.1.0 2021
+-- Jaime H Rozo - jhrozo@yahoo.com
 
--- Script para criação do esquema de dados para o Sistema de Pedidos
--- Jaime H Rozo (2021)
+/*
+   Script para criação do esquema de dados para o Sistema de Pedidos
+   usado nos exemplos dos manual Introdução ao SQL.
+*/
+ 
 
 /** Criar o banco de dados **/
 USE [master]
 go
 
-DROP DATABASE [bd_01]
+-- SQL Server Syntax
+DROP DATABASE IF EXISTS [bd_01]
 go
 
 CREATE DATABASE [bd_01]

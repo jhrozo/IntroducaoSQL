@@ -1,5 +1,5 @@
 -------------------
-EXERCÍCIOS
+    EXERCÍCIOS
 -------------------
 
 1) Listar as cidades dos clientes que nao iniciam e não terminam com vogal
@@ -8,9 +8,9 @@ EXERCÍCIOS
 
 3) Listar todos os atributos dos produtos que nunca foram pedidos, incluir o nome do fornecedor.
 
-4) Listar todas as combinações entre os 5 primeiros números.
+4) Listar todas as combinações entre números de 1 a 25.
 
-5) Listar todas as combinações entre os 5 primeiros números, excluir as combinações repetidas.	
+5) Listar todas as combinações entre números de 1 a 25, excluir as combinações repetidas.	
 
 6) Listar os detalhes do último pedido do cliente Christina Berglund.
 

@@ -1,7 +1,9 @@
-﻿-- popularTabelas.sql
-
--- Script para popular as tabelas do esquema de dados para o Sistema de Pedidos
+﻿-- popularTabelas.sql  v1.0  2021
 -- Jaime H Rozo (2021)
+/*
+   Script para popular as tabelas do banco de dados bd_01
+   usadas nos exemplos no manual Introdução ao SQL.
+*/
 
 use bd_01
 go
@@ -3199,3 +3201,50 @@ INSERT INTO [ItemPedido] ([Id],[PedidoId],[ProdutoId],[PrecoUnit],[Quantidade])V
 INSERT INTO [ItemPedido] ([Id],[PedidoId],[ProdutoId],[PrecoUnit],[Quantidade])VALUES(2154,830,75,7.75,4)
 INSERT INTO [ItemPedido] ([Id],[PedidoId],[ProdutoId],[PrecoUnit],[Quantidade])VALUES(2155,830,77,13.00,2)
 SET IDENTITY_INSERT [ItemPedido] OFF
+
+-- tabela_A
+-- Cria e popula a tabela_A manualmente
+CREATE TABLE tabela_A (numero SMALLINT NULL) ON [PRIMARY]
+go
+
+INSERT INTO tabela_A VALUES(1);
+INSERT INTO tabela_A VALUES(2);
+INSERT INTO tabela_A VALUES(3);
+INSERT INTO tabela_A VALUES(4);
+INSERT INTO tabela_A VALUES(5);
+INSERT INTO tabela_A VALUES(6);
+INSERT INTO tabela_A VALUES(7);
+INSERT INTO tabela_A VALUES(8);
+INSERT INTO tabela_A VALUES(9);
+INSERT INTO tabela_A VALUES(10);
+INSERT INTO tabela_A VALUES(11);
+INSERT INTO tabela_A VALUES(12);
+INSERT INTO tabela_A VALUES(13);
+INSERT INTO tabela_A VALUES(14);
+INSERT INTO tabela_A VALUES(15);
+INSERT INTO tabela_A VALUES(16);
+INSERT INTO tabela_A VALUES(17);
+INSERT INTO tabela_A VALUES(18);
+INSERT INTO tabela_A VALUES(19);
+INSERT INTO tabela_A VALUES(20);
+INSERT INTO tabela_A VALUES(21);
+INSERT INTO tabela_A VALUES(22);
+INSERT INTO tabela_A VALUES(23);
+INSERT INTO tabela_A VALUES(24);
+INSERT INTO tabela_A VALUES(25);
+
+-- tabela_B
+-- Cria e popula a tabela_b programaticamente.
+CREATE TABLE tabela_B (numero SMALLINT NULL) ON [PRIMARY]
+go
+
+DECLARE @i AS SMALLINT = 1;
+WHILE (@i <= 25)
+	BEGIN TRY
+		INSERT INTO tabela_B VALUES(@i);
+		SET @i = @i + 1;
+	END TRY
+	BEGIN CATCH
+		SELECT ERROR_NUMBER() AS [Número do erro],
+		       ERROR_MESSAGE() AS [Descrição];
+	END CATCH;
